@@ -6,8 +6,7 @@
 [![Star on GitHub](https://img.shields.io/github/stars/Brem0827/23-Flutter.svg?style=social)](https://github.com/Brem0827/23-Flutter/stargazers)
 [![Fork on GitHub](https://img.shields.io/github/forks/Brem0827/23-Flutter.svg?style=social)](https://github.com/Brem0827/23-Flutter/network/members)
 
-# 🏃Next.js
-### 📔 201930324 이현종
+# 🏃Flutter
 
 <table align="center">
     <tr>
