@@ -28,11 +28,228 @@
 ---
 
 1. 💭[1주차](#1주차)➡️
+1. 💭[2주차](#2주차)➡️
+
+---
+# 2주차
+
+🔋 2023.11.21 ~ 2023.11.27
 
 ---
 # 1주차
 
 🔋 2023.11.14 ~ 2023.11.20
+
+## 6일차
+
+<details><summary>💬 변수 코드 </summary>
+
+```dart
+
+import 'dart:io';
+
+int selectedTable = 0;
+
+void printMultiplicationTable(int start, int value) {
+	for( var i = start ; i <= selectedTable ; i += value) {
+		print('=== $i 단 ===');
+		for( var j = 1 ; j <= 9 ; j++ ) {
+			var result = i * j;
+			print('$i x $j = $result');
+		}
+		print('----------------------');
+	}
+}
+
+void printOptions() {
+	print('1. 홀수단 출력');
+	print('2. 짝수단 출력');
+	print('3. 입력한 단까지 출력');
+	print('4. 종료');
+	print('원하는 작업 번호를 입력 하세요 : ');
+}
+
+void handleUserInput(int input) {
+	if(input == 1) {
+		selectedTable = 9;
+		printMultiplicationTable(3,2);
+	} else if(input == 2) {
+		selectedTable = 8;
+		printMultiplicationTable(2,2);
+	}
+	else if(input == 3) {
+		print('출력할 단을 입력하세요 : ');
+		selectedTable = int.parse(stdin.readLineSync()!);
+		printMultiplicationTable(2,1);
+	} else if(input == 4) {
+		print('프로그램을 종료합니다.');
+		exit(0);
+	} else {
+		print('잘못된 입력입니다. 다시 입력해 주세요');
+	}
+}
+
+void main() {
+	while(true) {
+		printOptions();
+		var input = int.parse(stdin.readLineSync()!);
+		handleUserInput(input);
+		print(' ');
+	}
+}
+
+```
+
+</details>
+
+<details><summary>💬 리스트 </summary>
+
+- Dart에서 가장 일반적으로 사용되는 데이터 구조 중 하나이자, 여러 개의 항목을 순서대로 저장하는 컬렉션입니다.
+
+- 각 항목은 인덱스를 통해 접근할 수 있습니다.
+
+- 동적으로 크기가 조정될 수 있으며, 같은 리스트에 서로 다른 데이터 유형의 항목을 포함할 수 있습니다.
+
+</details>
+
+<details><summary>💬 리스트의 생성 </summary>
+
+- 리스트는 대괄호를 사용하여 생성하며, 각 항목은 쉼표로 구분합니다.
+
+- 리스트의 각 항목은 값을 나타내며, 인덱스를 통해 개별 항목에 접근할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+List<String> fruits = ['apple','banana','orange'];
+List<dynamic> mixed = [1,'two',true];
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 길이 확인 </summary>
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+int length = numbers.length;
+print(length);
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 추가하기 </summary>
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+numbers.add(6);
+numbers.add(7);
+
+print(numbers);
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 접근하기 </summary>
+
+- Dart에서 리스트의 요소에 접근하는 방법은 인덱스를 사용하는 것 입니다.
+
+- 리스트의 각 요소는 0 부터 시작하는 인덱스를 가지고 있으며, 해당 인덱스를 사용하여 요소에 접근할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+
+int firstNumber = numbers[0];
+print(firstNumber);
+
+int thirdNumber = numbers[2];
+print(thirdNumber);
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 변경하기 </summary>
+
+- Dart에서 리스트의 특정 위치에 있는 요소를 수정하려면 인덱스를 사용하여 접근하고 값을 할당하면 됩니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+
+numbers[1] = 8;
+print(numbers);
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 제거하기 </summary>
+
+- Dart에서 리스트의 특정 위치에 있는 요소를 제거하려면 remove() 메서드나 removeAt() 메서드를 사용할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+
+numbers.remove(1);
+numbers.removeAt(2);
+print(numbers);
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 복사하기 </summary>
+
+- Dart에서 리스트를 복사하려면 List.from() 생성자를 사용하거나 toList() 메서드를 사용할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+List<int> copiedNumbers = List.from(numbers);
+
+List<int> numbers = [1,2,3,4,5];
+List<int> copiedNumbers2 = List.toList();
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 복사하기 </summary>
+
+- Dart에서 리스트를 복사하려면 List.from() 생성자를 사용하거나 toList() 메서드를 사용할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+List<int> copiedNumbers = List.from(numbers);
+
+List<int> numbers = [1,2,3,4,5];
+List<int> copiedNumbers2 = List.toList();
+
+```
+
+</details>
+
+<details><summary>💬 리스트의 요소 합치기 </summary>
+
+- Dart에서 리스트를 합치려면 + 연산자를 사용하거나 addAll() 메서드를 사용할 수 있습니다.
+
+```dart
+
+List<int> numbers = [1,2,3,4,5];
+List<int> numbers2 = [6,7,8,9,10];
+List<int> combinednumber = numbers + numbers2;
+
+```
+
+</details>
 
 ## 5일차 
 
