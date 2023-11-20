@@ -221,22 +221,6 @@ List<int> copiedNumbers2 = List.toList();
 
 </details>
 
-<details><summary>💬 리스트의 요소 복사하기 </summary>
-
-- Dart에서 리스트를 복사하려면 List.from() 생성자를 사용하거나 toList() 메서드를 사용할 수 있습니다.
-
-```dart
-
-List<int> numbers = [1,2,3,4,5];
-List<int> copiedNumbers = List.from(numbers);
-
-List<int> numbers = [1,2,3,4,5];
-List<int> copiedNumbers2 = List.toList();
-
-```
-
-</details>
-
 <details><summary>💬 리스트의 요소 합치기 </summary>
 
 - Dart에서 리스트를 합치려면 + 연산자를 사용하거나 addAll() 메서드를 사용할 수 있습니다.
