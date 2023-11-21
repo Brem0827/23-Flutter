@@ -35,6 +35,303 @@
 
 🔋 2023.11.21 ~ 2023.11.27
 
+# 7일차
+
+<details><summary>💬 리스트 반복문 </summary>
+
+- Dart에서는 다양한 반복문을 활용하여 리스트의 요소를 순회하고 처리할 수 있습니다.
+
+- 주 반복문으로는 for-in 루프와 forEach() 메서드가 있습니다.
+
+## 1차원 리스트 반복문
+
+* for-in 루프
+
+```dart
+
+List<String> fruits = ['apple','banana','cherry'];
+
+for(String fruit in fruits) {
+	print(fruit);
+}
+
+```
+
+* forEach()
+
+```dart
+
+List<String> fruits = ['apple','banana','cherry'];
+
+fruits.forEach((fruits) {
+	print(fruit);
+});
+
+```
+
+## 2차원 리스트
+
+- 2차원 리스트는 리스트 안에 또 다른 리스트를 요소로 갖는 리스트입니다.
+
+- 각각의 내부 리스트는 행 이라고 생각할 수 있고, 전체 리스트는 행들을 모아놓은 표나 행렬 형태로 이해할 수 있습니다.
+
+- 행과 열의 개념을 가진 데이터를 표현하고 처리할 수 있습니다.
+
+```dart
+
+List<List<int>> twoDimensionalList = [
+	[1,2,3],
+	[4,5,6]
+];
+
+```
+
+## 다차원 리스트
+
+- 2차원 이상의 차원을 가지는 리스트를 말합니다.
+
+- 2차원 리스트는 행과 열로 이루어져 있지만, 다차원 리스트는 그 이상의 차원을 가질 수 있습니다.
+
+- 다차원 리스트는 각 차원마다 해당하는 인덱스를 사용하여 요소에 접근할 수 있습니다.
+
+</details>
+
+<details><summary>💬 맵 </summary>
+
+- Dart에서 맵은 키-값 쌍으로 이루어진 컬렉션 데이터 타입입니다.
+
+- 각 키는 고유한 값으로 설정되어 있으며, 키와 연결된 값을 얻거나 설정할 수 있습니다.
+
+```dart
+
+Map<String, int> map1 = {'apple':1, 'banana':2, 'orange':3 };
+Map<String, int> map2 = {};
+Map<String, int> map3 = new Map();
+
+```
+
+```dart
+
+var fruits = {'apple': {'color' : 'red', 'piece' : 1000}, 'banana' : {'color' : 'yellow', 'piece' : 500} };
+print(fruits['apple', 'color']);
+print(fruits['banana', 'price']);
+
+```
+
+</details>
+
+<details><summary>💬 오류 </summary>
+
+- 변수 미선언 에러 : 코드에서 salesRecords와 inventory 리스트가 초기화 되기 전에 사용되는 경우 변수 미선언 오류가 발생할 수 있습니다.
+
+- 타입 불일치 에러 : selfFruit 함수와 매개변수 quantity는 정수타입으로 선언되었지만, 문자열이나 다른 타입의 값이 전달될 경우 타입 불일치 오류가 발생할 수 있습니다.
+
+- null 안전성 에러 : 코드에서 salesRecords 리스트를 초기화 할 떄 빈 리스트로 선언하였기 때문에 null 체크를 하지 않아도 됩니다.
+
+- checkinventory 함수에서 inventory 리스트가 null인지 확인 하지 않고 사용할 경우 null 참조 오류가 발생할 수도 있습니다.
+
+- 인덱스 범위 초과 에러 : checkinventory 함수에서 inventory 리스트의 인덱스 범위를 초과하여 접근하는 경우 인덱스 범위 초과 오류가 발생합니다.
+
+</details>
+
+<details><summary>💬 예제 </summary>
+
+- 조건문
+
+```dart
+
+int A = 10;
+int B = 20;
+int C = 30;
+
+if ( A < B && A < C ) {
+	print('A가 가장 작다.');
+} else {
+	print('A가 가장 작지 않다.');
+}
+
+if ( A < B ) {
+	if(A < C) {
+	print('A가 가장 작다.');
+  }
+	print('A가 가장 작지 않다.');
+}
+
+if ( A >= B ) {
+	print('A가 B보다 크거나 같다.');
+} else if ( A >= C ) {
+	print('A가 C보다 크거나 같다.');
+} else {
+	print('A가 가장 작다.');
+}
+
+```
+
+- 반복문
+
+```dart
+
+for( int i = 1 ; i <= 5 ; i++ ) {
+	for( int j = 1 ; j <= i ; j++ ) {
+		stdout.write('*');
+	} 
+	stdout.write(' ');
+}
+
+for( int i = 1 ; i <= 5 ; i++ ) {
+	for( int j = 1 ; j <= i ; j++ ) {
+		stdout.write('');
+	} 
+	for( int k = 1 ; k <= i ; j++ ) {
+		stdout.write('*');
+	} 
+	stdout.write(' ');
+}
+
+for( int i = 5 ; i >= 1 ; i-- ) {
+	for( int j = 1 ; j <= i ; j++ ) {
+		stdout.write('*');
+	} 
+	stdout.write(' ');
+}
+
+for( int i = 5 ; i >= 1 ; i-- ) {
+	for( int j = 5 ; j > 1 ; j-- ) {
+		stdout.write('');
+	} 
+	for( int k = 1 ; k <= i ; j++ ) {
+		stdout.write('*');
+	} 
+	stdout.write(' ');
+}
+
+for( int i = 1 ; i <= 9 ; i++ ) {
+	if( i <= 5 ) {
+		for( int j = 5 ; j > i ; j-- ) {
+			stdout.write(' ');
+		}
+		for( int k = 1 ; k <= 2 * i ; k++ ) {
+			stdout.write('*');
+		}
+		stdout.write('\n');
+	} else {
+		for( int j = 1 ; j <= i - 5 ; j++ ) {
+			stdout.write(' ');
+		}
+		for( int k = 1 ; k <= 20 - 2 * i ; k++ ) {
+			stdout.write('*');
+		}
+		stdout.write('\n');
+	}
+}
+
+```
+
+- switch 문
+
+```dart
+
+String sports = 'soccer';
+
+switch (sports) {
+	case 'soccer' :
+		print('축구입니다.');
+		break;
+	case 'basketball' :
+		print('농구입니다.');
+		break;
+	case 'baseball' :
+		print('야구입니다.');
+		break;
+	case 'tennis' :
+		print('테니스입니다.');
+		break;
+	default :
+		print('기타 스포츠입니다.');
+		break;
+}
+
+```
+
+- 리스트
+
+```dart
+
+void main() {
+	List<int> numbers = [10, 20, 30, 40, 50];
+	int target = 30;
+	bool found = false;
+	int index;
+
+	for ( int i = 0 ; i < numbers.length ; i++ ) {
+		if ( numbers[i] == target ) {
+			found = true;
+			index = i;
+			break;
+		}
+	}
+
+	if(found) {
+		print('원하는 값 $target은 리스트에 있습니다. 인덱스 : $index');
+	} else {
+		print('원하는 값 $target은 리스트에 없습니다.');
+	}
+}
+
+```
+
+</details>
+
+<details><summary>💬 클래스 </summary>
+
+- 클래스와 객체는 객체 지향 프로그래밍에서 핵심 개념 중 하나입니다.
+
+- Dart에서 클래스는 객체를 만들기 위한 설계도 역할을 합니다.
+
+- 객체는 클래스를 바탕으로 만들어진 것 입니다.
+
+- 클래스는 속성과 메서드로 구성됩니다.
+
+- 속성을 클래스의 상태를 나타내고, 메서드는 클래스가 수행할 수 있는 동작을 정의합니다.
+
+- 클래스 선언은 class 키워드로 시작하며, 클래스명을 지정합니다.
+
+- 중괄호 내에는 클래스의 속성, 생성자, 메서드 등을 선언합니다.
+
+- 클래스 속성에는 대개 해당 클래스가 가지는 데이터를 저장하기 위한 변수들이 선언됩니다.
+
+- 생성자는 객체를 초기화 하기 위해 사용되며, 클래스의 인스턴스를 만들기 위해 호출됩니다.
+
+- 메서드는 클래스 안에서 정의된 함수로, 클래스가 가지는 동작을 수행 합니다.
+
+```dart
+
+class Person {
+	String name = "kim";
+	int age = 20;
+
+
+	Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	void sayHello() {
+		print("Hello, my name is $name and I'm $age years old");
+	}
+}
+
+void main() {
+	Person person = new Person("John", 18);
+	person.sayHello();
+}
+
+```
+
+</details>
+
+
+
 ---
 # 1주차
 
@@ -237,7 +534,7 @@ List<int> copiedNumbers2 = List.toList();
 
 </details>
 
-<details><summary>💬 리스트의 요소 합치기 </summary>
+<details><summary>💬 리스트 합치기 </summary>
 
 - Dart에서 리스트를 합치려면 + 연산자를 사용하거나 addAll() 메서드를 사용할 수 있습니다.
 
